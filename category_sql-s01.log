@@ -1,0 +1,19 @@
+[LOGFILE] /home/qahome/qa_repository_test/memory_leak/memory_sql_10.2.0.7923-9c505c1_20180520064416/memory_cub_cas_29735.log
+ 
+ 65,536 bytes in 2 blocks are possibly lost in loss record 124 of 131
+    at : malloc (vg_replace_malloc.c:298)
+    by : my_malloc(unsigned long) (lea_heap.c:125)
+    by : sys_alloc(malloc_state*, unsigned long) (malloc_2_8_3.c:3612)
+    by : mspace_malloc (malloc_2_8_3.c:4921)
+    by : hl_lea_alloc(unsigned long, unsigned long) (lea_heap.c:342)
+    by : db_ws_alloc(unsigned long) (quick_fit.c:112)
+    by : classobj_make_attribute(char const*, pr_type*, SM_NAME_SPACE) (class_object.c:4680)
+    by : init_db_attribute_list(showstmt_metadata*) (show_meta.c:844)
+    by : showstmt_metadata_init() (show_meta.c:946)
+    by : boot_restart_client(boot_client_credential*) (boot_cl.c:1332)
+    by : db_restart (db_admin.c:893)
+    by : db_restart_ex (db_admin.c:964)
+    by : ux_database_connect(char*, char*, char*, char**) (cas_execute.c:528)
+    by : cas_main() (cas.c:1152)
+    by : main (cas.c:493)
+ 
